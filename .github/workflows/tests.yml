@@ -14,14 +14,13 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install Robot Framework
+      - name: Install dependencies
         run: |
           pip install robotframework
 
-      - name: Run Robot Tests e captura status
-        id: robot
+      - name: Run Robot Tests (continua mesmo com erro)
         run: |
-          robot -d results tests/ || echo "exit_code=$?" >> $GITHUB_OUTPUT
+          robot -d results tests/ || true
 
       - name: Parse Robot Output to JSON
         run: |
