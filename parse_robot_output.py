@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 import json
 import time
 
-tree = ET.parse('output.xml')
+tree = ET.parse('results/output.xml')
 root = tree.getroot()
 
 results = {
